@@ -17,10 +17,6 @@ export class HeroHeaderComponent implements OnInit {
   getOpacity = (denominator: number): number => 1 - window.pageYOffset/denominator;
 
   ngOnInit() {
-    window.addEventListener('scroll', this.ParallaxAnimation);
-  }
-
-  ParallaxAnimation() { 
-    
+    window.addEventListener('scroll', function (){});
   }
 } 
