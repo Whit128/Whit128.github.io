@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-hero-header',
@@ -8,26 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class HeroHeaderComponent implements OnInit {
   Name: string = "David Whitcome";
   Tag: string = "Software Developer";
-  HeaderHeight: number;
+  header: HTMLElement;
 
   constructor() {
     window.addEventListener('scroll', this.ParallaxAnimation);
   }
 
   ngOnInit() {
+    this.header = document.getElementById("header");
     this.ParallaxAnimation(); // Set header background to correct position for some browsers.
   }
 
   ParallaxAnimation() {
-    var header: HTMLElement = document.getElementById("header");
-    console.log(parseInt(header.style.height));
-
-    if (parseInt(header.style.height) >= 80)
-      header.style.height = (600 - window.pageYOffset) + "px";
+    if (parseInt(this.header.style.height) >= 80)
+      this.header.style.height = (600 - window.pageYOffset) + "px";
     else
-      header.style.height = "80px";
+      this.header.style.height = "80px";
 
     document.getElementById("header-background").style.opacity = (1 - window.pageYOffset/600).toString();
     document.getElementById("header-bottom").style.opacity = (1 - window.pageYOffset/450).toString();
   }
-}
+} 
