@@ -1,14 +1,17 @@
 @import "../../variables.scss";
 
 #header {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     flex: 1;
-    height: 75vh;
-    min-height: 300px;
+    height: 600px;
+    min-height: 80px;
     max-height: 1000px;
     overflow: hidden;
-    background: #333;
-    background-image: url("/assets/images/header-loading.jpg");
+    background: rgba(51, 51, 51, 0.7);
+    backdrop-filter: blur(10px);
+    //background-image: url("/assets/images/header-loading.jpg");
     background-size: cover;
     background-position: 50% 70%;
     display: flex;
@@ -16,6 +19,10 @@
     align-items: center;
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
+
+    @media #{$mobile} {
+        min-height: 60px;
+    }
 
     #header-background {
         background-image: url("/assets/images/header.jpg");
@@ -50,7 +57,7 @@
             font-weight: 700;
             
             @media #{$mobile} {
-                font-size: 2em;
+                font-size: 1.8em;
             }
         }
     

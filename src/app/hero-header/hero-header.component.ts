@@ -18,13 +18,8 @@ export class HeroHeaderComponent implements OnInit {
   }
 
   ParallaxAnimation() {
-    var headerBackground: HTMLElement = document.getElementById("header-background");
-    if (headerBackground != null) {
-      var backgroundPosition: number = window.pageYOffset / 4;
-      if (backgroundPosition >= 0)
-        headerBackground.style.marginTop = backgroundPosition + "px";
-      else
-        headerBackground.style.marginTop = "0px";
-    }
+    var headerBackground: HTMLElement = document.getElementById("header");
+    headerBackground.style.height = (600 - window.pageYOffset) + "px";
+    document.getElementById("header-background").style.opacity = (1 - window.pageYOffset/600).toString();
   }
 }
