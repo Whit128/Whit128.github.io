@@ -10,7 +10,7 @@ export class HeroHeaderComponent implements OnInit {
   Tag: string = "Software Developer";
 
   getHeaderHeight(): number {
-    let newHeight = 600 - window.pageYOffset;
+    let newHeight = 300 - window.pageYOffset;
     return newHeight < 0 ? 0 : newHeight;
   }
 

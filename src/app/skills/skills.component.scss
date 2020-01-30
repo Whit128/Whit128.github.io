@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 .section {
-    margin-top: 600px;
     background: linear-gradient(to bottom, $background-light-gradient, $background-light);
 
     @media #{$dark-mode} {
