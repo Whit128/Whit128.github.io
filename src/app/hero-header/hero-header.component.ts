@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeroHeaderComponent implements OnInit {
   Name: string = "David Whitcome";
   Tag: string = "Software Developer";
+  HeaderHeight: number;
 
   constructor() {
     window.addEventListener('scroll', this.ParallaxAnimation);
@@ -18,8 +19,14 @@ export class HeroHeaderComponent implements OnInit {
   }
 
   ParallaxAnimation() {
-    var headerBackground: HTMLElement = document.getElementById("header");
-    headerBackground.style.height = (600 - window.pageYOffset) + "px";
+    var header: HTMLElement = document.getElementById("header");
+    console.log(parseInt(header.style.height));
+
+    if (parseInt(header.style.height) >= 80)
+      header.style.height = (600 - window.pageYOffset) + "px";
+    else
+      header.style.height = "80px";
+
     document.getElementById("header-background").style.opacity = (1 - window.pageYOffset/600).toString();
     document.getElementById("header-bottom").style.opacity = (1 - window.pageYOffset/450).toString();
   }
