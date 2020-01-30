@@ -21,5 +21,6 @@ export class HeroHeaderComponent implements OnInit {
     var headerBackground: HTMLElement = document.getElementById("header");
     headerBackground.style.height = (600 - window.pageYOffset) + "px";
     document.getElementById("header-background").style.opacity = (1 - window.pageYOffset/600).toString();
+    document.getElementById("header-bottom").style.opacity = (1 - window.pageYOffset/450).toString();
   }
 }
