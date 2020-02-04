@@ -21,7 +21,7 @@ export class HeroHeaderComponent {
   onScroll() {
     this.headerHeight = Math.max(0, this.getVhInPixels(65) - window.pageYOffset);
     this.opacity = Math.max(0, 1 - window.pageYOffset/(this.getVhInPixels(65)/1.2));
-    this.h2Height = Math.max(0, 22 - window.pageYOffset/10);
+    this.h2Height = Math.max(0, 22 - window.pageYOffset/this.getVhInPixels(1));
   }
 
 } 
