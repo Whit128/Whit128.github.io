@@ -14,10 +14,13 @@ export class HeroHeaderComponent {
   opacity: number;
   h2Height: number;
 
+  getVhInPixels = (percent: number) => document.documentElement.clientHeight * percent/100;
+
   @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
   onScroll() {
-    this.headerHeight = Math.max(0, this.originalHeight - window.pageYOffset);
-    this.opacity = Math.max(0, 1 - window.pageYOffset/(this.originalHeight/1.2));
+    this.headerHeight = Math.max(0, this.getVhInPixels(65) - window.pageYOffset);
+    this.opacity = Math.max(0, 1 - window.pageYOffset/(this.getVhInPixels(65)/1.2));
     this.h2Height = Math.max(0, 22 - window.pageYOffset/10);
   }
 
