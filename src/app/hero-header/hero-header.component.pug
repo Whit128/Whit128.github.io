@@ -1,8 +1,7 @@
 #header([style.height.px]="getHeaderHeight()")
-  #header-background([style.opacity]="getOpacity(600)")
+  #header-background([style.opacity]="getOpacity(250)")
   .ie10-fix
     #header-centered
       h1 {{Name}}
-  #header-bottom([style.opacity]="getOpacity(450)")
-    h2 {{Tag}}
+      h2([style.height.px]="getHeight()", [style.opacity]="getOpacity(250)") {{Tag}}
 #header2
