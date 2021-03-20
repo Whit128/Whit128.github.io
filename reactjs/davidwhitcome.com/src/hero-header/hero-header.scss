@@ -1,0 +1,71 @@
+@import "../variables.scss";
+
+#header {
+    position: relative;
+    flex: 1;
+    height: 75vh;
+    min-height: 300px;
+    max-height: 1000px;
+    overflow: hidden;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+
+    #header-background,
+    #header-background-wrapper {
+        background-size: cover;
+        background-position: 50% 70%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #header-background-wrapper {
+        background-image: url("/images/header-loading.jpg");
+    }
+    
+    #header-background {
+        background-image: url("/images/header.jpg");
+    }
+    
+    .ie10-fix {
+        position: relative;
+        z-index: 2;
+    
+        #header-centered {
+            z-index: 2;
+            text-align: center;
+        }
+    
+        h1,
+        h2 {
+            color: $text-light;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+            font-family: -apple-system, 'Open Sans', 'Arial', sans-serif;
+            margin: 0;
+        }
+    
+        h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            
+            @media #{$mobile} {
+                font-size: 2em;
+            }
+        }
+    
+        h2 {
+            font-size: 1.4em;
+            font-weight: 500;
+    
+            @media #{$mobile} {
+                font-size: 1em;
+            }
+        }
+    }
+}

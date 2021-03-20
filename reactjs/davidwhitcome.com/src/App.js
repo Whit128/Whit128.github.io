@@ -1,8 +1,10 @@
 import './App.scss';
+import HeroHeader from './hero-header/hero-header'
 
 function App() {
   return (
     <div id="body-content">
+      <HeroHeader/>
       {/* <div class="ios-bar"></div>
       <app-hero-header></app-hero-header>
       <app-skills></app-skills>
