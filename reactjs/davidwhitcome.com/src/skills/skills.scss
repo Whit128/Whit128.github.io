@@ -1,0 +1,52 @@
+@import "../variables.scss";
+@import "../fonts/font-awesome/css/font-awesome.min.css";
+@import "../fonts/devicon/devicon.min.css";
+
+.section {
+    background: linear-gradient(to bottom, $background-light-gradient, $background-light);
+
+    @media #{$dark-mode} {
+        background: linear-gradient(to bottom, $background-dark-gradient, $background-dark);
+    }
+}
+
+.block-list {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: $text-dark;
+
+    li {
+        display: inline-block;
+        padding: 16px 8px;
+        text-align: center;
+        width: 90px;
+        height: 80px;
+
+        @media screen and (max-width: 363px) {
+            padding: 16px 0;
+        }
+
+        i {
+            font-size: 3em;
+            display: block;
+            padding: 0 0 10px 0;
+        }W
+
+        span {
+            font-size: 0.85em;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: $text-dark;
+        }
+
+        @media #{$dark-mode} {
+            color: $text-light;
+        }
+    }
+}

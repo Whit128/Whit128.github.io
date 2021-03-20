@@ -7,7 +7,7 @@ interface IState {
 }
 
 class HeroHeader extends React.Component<{}, IState> {
-  constructor(props: {} | Readonly<{}>) {
+  constructor(props: {}) {
     super(props);
     this.state = {
       name: "David Whitcome",
