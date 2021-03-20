@@ -6,7 +6,7 @@ import MainCard from './main-card/main-card'
 function App() {
   return (
     <div id="body-content">
-      <div class="ios-bar"></div>
+      <div className="ios-bar"></div>
       <HeroHeader/>
       <Skills/>
       <MainCard/>

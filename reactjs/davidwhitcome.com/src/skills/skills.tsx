@@ -32,7 +32,7 @@ class Skills extends React.Component<{}, IState> {
           <ul className="block-list">
           {
             this.state.skills.map(s => 
-              <li>
+              <li key={s.text}>
                   <i className={s.iconClass} aria-hidden="true"></i>
                   <span>{s.text}</span>
               </li>
