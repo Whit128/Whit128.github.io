@@ -3,7 +3,7 @@ import HeroHeader from './hero-header/hero-header'
 import Skills from './skills/skills'
 import MainCard from './main-card/main-card'
 
-function App() {
+export default function App() {
   return (
     <div id="body-content">
       <div className="ios-bar"></div>
@@ -17,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

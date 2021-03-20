@@ -5,13 +5,10 @@ interface IState {
   name: string
 }
 
-class LeftColumn extends React.Component<{}, IState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      name: 'Dave'
-    }
-  }
+export default class LeftColumn extends React.Component<{}, IState> {
+  state = {
+    name: 'Dave'
+  };
 
   render = () => (
     <div className="left-column"><img className="me" src="/assets/images/me.jpg" alt="" />
@@ -28,6 +25,4 @@ class LeftColumn extends React.Component<{}, IState> {
         Boy Scouts of America as of August 2014.</p>
     </div>
   );
-}
-
-export default LeftColumn;
+};

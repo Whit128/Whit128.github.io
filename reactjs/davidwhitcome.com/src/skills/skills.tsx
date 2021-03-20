@@ -1,17 +1,14 @@
 import React from 'react'
 import './skills.scss'
+import SkillIcon from './skill-icon'
 
 interface IState {
   skills: Array<SkillIcon>
 }
 
-class Skills extends React.Component<{}, IState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      skills: new Array<SkillIcon>()
-    }
-    this.state.skills.push(
+export default class Skills extends React.Component<{}, IState> {
+  state = {
+    skills: [
       new SkillIcon("devicon-java-plain", "Java"),
       new SkillIcon("devicon-csharp-plain", "C#"),
       new SkillIcon("devicon-dot-net-plain", ".NET"),
@@ -22,14 +19,13 @@ class Skills extends React.Component<{}, IState> {
       new SkillIcon("devicon-html5-plain", "HTML"),
       new SkillIcon("devicon-css3-plain", "CSS"),
       new SkillIcon("fa fa-database", "SQL & CQL")
-    );
+    ]
   }
 
-  render() {
-    return (
-      <div className="section">
-        <div className="inner">
-          <ul className="block-list">
+  render = () => (
+    <div className="section">
+      <div className="inner">
+        <ul className="block-list">
           {
             this.state.skills.map(s => 
               <li key={s.text}>
@@ -38,29 +34,8 @@ class Skills extends React.Component<{}, IState> {
               </li>
             )
           }
-          </ul>
-        </div>
+        </ul>
       </div>
-    )
-  }
-}
-
-export default Skills;
-
-class SkillIcon {
-  private _iconClass: string;
-  private _text: string;
-  
-  constructor(iconClass: string, text: string) {
-    this._iconClass = iconClass;
-    this._text = text;
-  }
-
-  get iconClass(): string {
-    return this._iconClass;
-  }
-
-  get text(): string {
-    return this._text;
-  }
-}
+    </div>
+  );
+};
