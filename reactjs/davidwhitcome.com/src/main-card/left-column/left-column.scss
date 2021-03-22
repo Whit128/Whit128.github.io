@@ -3,6 +3,7 @@
 .left-column {
     width: 300px;
     padding: 20px;
+    flex-shrink: 0;
 
     @media #{$mobile} {
         width: auto;
