@@ -32,5 +32,5 @@ export default class Social extends React.Component<{}, IState> {
                 </ul>
             </div>
         </div>
-    )
+    );
 }
